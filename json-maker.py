@@ -28,7 +28,7 @@ commit = input("Enter commit name:")
 
 post_url = "https://api.github.com/repos/CommanderRag/scripts/contents/json-content.json"
 
-headers = {"Authorization":"token e64903b17161c3f2db86b2109b9d66158a7a53db"}
+headers = {"Authorization":os.environ.get("github_token")}
 
 data_json = {"message":commit,"content":base64.decode("utf-8")}
 data = json.dumps(data_json)
